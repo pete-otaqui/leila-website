@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Joke-A-Tron</title>
+  <style>
+    .setup {
+      font-weight: bold;
+    }
+    .punchline {
+      display: none;
+    }
+    .visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+
+  <h1>Joke-A-Tron</h1>
+  <p class="joke">Waiter waiter, my coffee tastes like mud!</p>
+  <button class="punchline-button">Punchline</button>
+  <p class="punchline">That's right, it's fresh ground</p>
+
+
+
+
+
+
+
+  <script defer>
+    const jokes = ["what do you call a puppy in the desert?","doctor doctor, i think i've broken my nose"];
+    const punchlines = ["a hot dog!", "you know,i thought you smelled a bit funny!"];
+
+    const joke = document.querySelector(".joke");
+    const punchlinebutton = document.querySelector(".punchline-button");
+    const punchline = document.querySelector(".punchline");
+
+    let jokeNumber = 0;
+
+    function showNextJoke() {
+      jokeNumber = jokeNumber + 1;
+      if (jokeNumber > jokes.length - 1) {
+        jokeNumber = 0;
+      }
+      showjoke(jokeNumber);
+    }
+    function showPreviousJoke() {
+      jokeNumber = jokeNumber - 1;
+      if (jokeNumber < 0 ) {
+        jokeNumber = jokes.length - 1;
+      }
+      showjoke(jokeNumber);
+    }
+
+    function showjoke(number){
+      const currentJoke = jokes[number];
+      const currentPunchline = punchlines[number];
+      joke.textContent = currentJoke;
+      punchline.textContent = currentPunchline;
+      // punchline.classList.remove("visible");
+    }
+
+    showjoke(0)
+
+    function showpunchline(){
+      punchline.classList.add("visible");
+    }
+    punchlinebutton.addEventListener("click", showpunchline, false)
+  </script>
+</body> 
+</html>
