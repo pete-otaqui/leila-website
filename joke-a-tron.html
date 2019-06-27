@@ -50,15 +50,16 @@
     </div>
 
     <script defer>
-      const jokes = [
-        "what do you call a puppy in the desert?",
-        "doctor doctor, I think i've broken my nose",
-        "what's brown and sticky?"
-      ];
-      const punchlines = [
-        "a hot dog!",
-        "you know, I thought you smelled a bit funny!",
-        "a stick!"
+      const jokelist = [
+        {
+          joke: "what do you call a puppy in the desert?",
+          punchline: "a hot dog!"
+        },
+        {
+          joke: "doctor doctor, I think i've broken my nose",
+          punchline: "you know, I thought you smelled a bit funny!"
+        },
+        { joke: "what's brown and sticky?", punchline: "a stick!" }
       ];
 
       const joke = document.querySelector(".joke");
@@ -70,7 +71,7 @@
 
       function showNextJoke() {
         jokeNumber = jokeNumber + 1;
-        if (jokeNumber > jokes.length - 1) {
+        if (jokeNumber > jokelist.length - 1) {
           jokeNumber = 0;
         }
         showjoke(jokeNumber);
@@ -78,16 +79,15 @@
       function showPreviousJoke() {
         jokeNumber = jokeNumber - 1;
         if (jokeNumber < 0) {
-          jokeNumber = jokes.length - 1;
+          jokeNumber = jokelist.length - 1;
         }
         showjoke(jokeNumber);
       }
 
       function showjoke(number) {
-        const currentJoke = jokes[number];
-        const currentPunchline = punchlines[number];
-        joke.textContent = currentJoke;
-        punchline.textContent = currentPunchline;
+        const currentJoke = jokelist[number];
+        joke.textContent = currentJoke.joke;
+        punchline.textContent = currentJoke.punchline;
         hidepunchline();
         // punchline.classList.remove("visible");
       }
