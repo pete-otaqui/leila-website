@@ -16,10 +16,10 @@
         font-weight: bold;
       }
       .punchline {
-        display: none;
+        visibility: hidden;
       }
       .visible {
-        display: block;
+        visibility:visible;
       }
       .title {
         font-family: 'Monoton';
@@ -60,10 +60,14 @@
   <body>
     <h1 class="title">😜Leila's Joke-A-Tron😜</h1>
     <div class="ha-ha">
+      <div class="button-area">
+        <button class="show-previous-joke">😆previous joke😆</button>
+        <button class="show-next-joke">😆next joke😆</button>
+      </div>
       <p class="joke">Waiter waiter, my coffee tastes like mud!</p>
       <button class="punchline-button">😂Punchline 😂</button>
       <p class="punchline">That's right, it's fresh ground</p>
-      <button class="show-next-joke">😆next joke😆</button>
+      
       <div class="shoeshi-container">
         <img src="shoeshi.jpg" />
         <p class="s-text">shoeshi</p>
@@ -90,6 +94,7 @@
       const punchlinebutton = document.querySelector(".punchline-button");
       const punchline = document.querySelector(".punchline");
       const nextjokebutton = document.querySelector(".show-next-joke");
+      const prevjokebutton = document.querySelector(".show-previous-joke");
 
       let jokeNumber = 0;
 
@@ -119,13 +124,14 @@
       showjoke(0);
 
       function showpunchline() {
-        punchline.classList.add("visible");
+        punchline.classList.toggle("visible");
       }
       function hidepunchline() {
         punchline.classList.remove("visible");
       }
       punchlinebutton.addEventListener("click", showpunchline, false);
       nextjokebutton.addEventListener("click", showNextJoke, false);
+      prevjokebutton.addEventListener("click", showPreviousJoke, false);
     </script>
   </body>
 </html>
