@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Leila's Joke-A-Tron</title>
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Courgette|Monoton&display=swap" rel="stylesheet">
     <style>
       html,
       body {
@@ -21,22 +22,26 @@
         display: block;
       }
       .title {
+        font-family: 'Monoton';
         text-align: center;
         margin: 0 auto;
         width: 80%;
         padding: 1em;
-        color: goldenrod;
-        background-color: black;
+        color:rgb(254, 254, 254);
+        background-image:linear-gradient(red 0%, orange 25%, yellow 50%, green 75%, blue 100%);
         font-size: 400%;
+        text-shadow:2px 2px 8px rgb(0, 0, 0)
       }
       .ha-ha {
+        font-family: 'Caveat Brush';
         text-align: center;
         font-size: 300%;
-        color: #43dca1;
+        color: black;
       }
       .ha-ha button {
+        font-family: 'Courgette';
         font-size: 120%;
-        color: crimson;
+        color: goldenrod;
       }
       .shoeshi-container {
         margin-top: 1em;
@@ -53,12 +58,12 @@
     </style>
   </head>
   <body>
-    <h1 class="title">Leila's Joke-A-Tron</h1>
+    <h1 class="title">😜Leila's Joke-A-Tron😜</h1>
     <div class="ha-ha">
       <p class="joke">Waiter waiter, my coffee tastes like mud!</p>
-      <button class="punchline-button">Punchline</button>
+      <button class="punchline-button">😂Punchline 😂</button>
       <p class="punchline">That's right, it's fresh ground</p>
-      <button class="show-next-joke">next joke</button>
+      <button class="show-next-joke">😆next joke😆</button>
       <div class="shoeshi-container">
         <img src="shoeshi.jpg" />
         <p class="s-text">shoeshi</p>
@@ -75,7 +80,10 @@
           joke: "doctor doctor, I think i've broken my nose",
           punchline: "you know, I thought you smelled a bit funny!"
         },
-        { joke: "what's brown and sticky?", punchline: "a stick!" }
+        { joke: "what's brown and sticky?", punchline: "a stick!" },
+        { joke: "(ringmaster) i'm sorry mr. mushroom but you can't be a clown",
+          punchline:"(mr. mushroom) why not? I'm a fungi!"},
+
       ];
 
       const joke = document.querySelector(".joke");
