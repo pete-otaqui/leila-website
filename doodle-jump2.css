@@ -1,0 +1,14 @@
+h1 {
+  color: green;
+}
+.title {
+  font-family: 'Monoton';
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+  padding: 1em;
+  color:rgb(254, 254, 254);
+  background-image:linear-gradient(red 0%, orange 25%, yellow 50%, green 75%, blue 100%);
+  font-size: 400%;
+  text-shadow:2px 2px 8px rgb(0, 0, 0)
+}
