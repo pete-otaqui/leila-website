@@ -30,6 +30,31 @@
         font-size: 400%;
         text-shadow:2px 2px 8px rgb(0, 0, 0)
       }
+      .speech-bubble {
+        padding:0.2em 0.4em;
+        margin: 1em 1em;
+        border:3px solid black;
+        display:inline-block;
+        border-radius: 1em;
+        position: relative;
+      }
+      .speech-bubble::after {
+        content: "V";
+        color: black;
+        background-color: white;
+        position: absolute;
+        font-weight: 100;
+        top: 90%;
+        left: 0%;
+        line-height: 1em;
+        font-family:Arial, Helvetica, sans-serif;
+        transform: rotate(28deg);
+      }
+      .speech-bubble-right::after {
+        left:auto;
+      right:0%;
+      transform: rotate(-28deg);
+      }
       .ha-ha {
         font-family: 'Caveat Brush';
         text-align: center;
@@ -44,6 +69,7 @@
       .shoeshi-container {
         margin-top: 1em;
         line-height: 0;
+        display:inline-block;
       }
       .s-text {
         background-color: darkgray;
@@ -64,13 +90,16 @@
         <button class="show-previous-joke">😆previous joke😆</button>
         <button class="show-next-joke">😆next joke😆</button>
       </div>
-      <p class="joke"></p>
-      <button class="punchline-button">😂Punchline 😂</button>
-      <p class="punchline"></p>
-      
-      <div class="shoeshi-container">
-        <img class="img" src="shoeshi.jpg" />
-        <p class="s-text">shoeshi</p>
+      <p class="joke speech-bubble"></p>
+      <div>
+        <button class="punchline-button">😂Punchline 😂</button>
+      </div>
+      <p class="punchline speech-bubble speech-bubble-right"></p>
+      <div>
+        <div class="shoeshi-container">
+          <img class="img" src="shoeshi.jpg" />
+          <p class="s-text">shoeshi</p>
+        </div>
       </div>
     </div>
 
